@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMK BANJAR ASRI - Teknik Komputer dan Jaringan</title>
+
+<style>
+:root {
+  --blue: #0284c7;
+  --sky: #38bdf8;
+  --navy: #082f49;
+  --white: #ffffff;
+  --light: #eff9ff;
+  --gray: #607789;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--navy);
+  line-height: 1.6;
+  background: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title p {
+  color: var(--gray);
+}
+
+/* NAVBAR */
+
+header {
+  background: white;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.logo span {
+  display: block;
+  font-size: 10px;
+  color: var(--gray);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: bold;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: var(--light);
+  color: var(--blue);
+  padding: 8px 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0369a1;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #0284c755;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(120deg, #e0f5ff, white);
+  padding: 85px 0;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+  min-height: 115px;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  color: var(--gray);
+  margin-bottom: 25px;
+}
+
+.hero-image {
+  animation: floating 4s ease-in-out infinite;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px #0284c733;
+}
+
+@keyframes floating {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* STATISTIK */
+
+.stats {
+  background: var(--light);
+  padding: 35px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.stat-box h2 {
+  color: var(--blue);
+  font-size: 35px;
+}
+
+/* TENTANG */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-content img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.about-content p {
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.check-list li::before {
+  content: "✓ ";
+  color: var(--blue);
+}
+
+/* PEMBELAJARAN */
+
+.learning {
+  background: var(--light);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  transition: .3s;
+  border: 1px solid #e0f2fe;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px #0284c722;
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* SLOGAN */
+
+.slogan {
+  background: linear-gradient(120deg, #0369a1, #38bdf8);
+  color: white;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.slogan h2 {
+  font-size: 45px;
+}
+
+/* GALERI */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+/* KONTAK */
+
+.contact {
+  background: var(--light);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  color: var(--gray);
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px #0284c722;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  outline: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--blue);
+}
+
+form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+form button {
+  width: 100%;
+}
+
+#message {
+  display: none;
+  color: #166534;
+  background: #dcfce7;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* ANIMASI SCROLL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: .8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .hero-content,
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slogan h2 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      SMK BANJAR ASRI
+      <span>TEKNIK KOMPUTER DAN JARINGAN</span>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#pembelajaran">Pembelajaran</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="container hero-content">
+
+    <div class="reveal">
+      <h1>
+        <span id="typing"></span>
+      </h1>
+
+      <p>
+        Belajar komputer, jaringan, dan server langsung praktek di lab.
+        Lulus siap kerja, siap kuliah, dan siap jadi pengusaha IT.
+      </p>
+
+      <a href="#kontak" class="btn">Daftar Sekarang →</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85" alt="Belajar komputer">
+    </div>
+
+  </div>
+</section>
+
+<!-- STATISTIK -->
+<section class="stats">
+  <div class="container stats-grid">
+
+    <div class="stat-box reveal">
+      <h2 class="counter" data-target="500">0</h2>
+      <p>Siswa</p>
+    </div>
+
+    <div class="stat-box reveal">
+      <h2 class="counter" data-target="98">0</h2>
+      <p>% Target Lulusan Siap Kerja</p>
+    </div>
+
+    <div class="stat-box reveal">
+      <h2 class="counter" data-target="12">0</h2>
+      <p>Guru</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="container about-content">
+
+    <div class="reveal">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85" alt="Praktik komputer">
+    </div>
+
+    <div class="reveal">
+      <h2>Tentang Jurusan TKJ</h2>
+
+      <p>
+        Teknik Komputer dan Jaringan (TKJ) adalah jurusan
+        yang mempelajari komputer, jaringan internet,
+        perangkat keras, perangkat lunak, dan server.
+      </p>
+
+      <p>
+        Di SMK BANJAR ASRI, siswa belajar teori sekaligus
+        praktik untuk mengembangkan kemampuan di bidang teknologi.
+      </p>
+
+      <ul class="check-list">
+        <li>Belajar sambil praktik</li>
+        <li>Mengenal teknologi terbaru</li>
+        <li>Mengembangkan kreativitas</li>
+        <li>Siap menghadapi dunia kerja</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PEMBELAJARAN -->
+<section class="learning" id="pembelajaran">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <h2>Apa Yang Dipelajari?</h2>
+      <p>Empat materi utama dalam jurusan Teknik Komputer dan Jaringan.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="card-icon">🖥️</div>
+        <h3>Perakitan Komputer</h3>
+        <p>Mempelajari komponen komputer, perakitan PC, instalasi, dan perawatan komputer.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">🌐</div>
+        <h3>Jaringan Komputer</h3>
+        <p>Mempelajari jaringan LAN, konfigurasi router, IP Address, dan koneksi internet.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">🔐</div>
+        <h3>Keamanan Jaringan</h3>
+        <p>Mengenal keamanan jaringan dan cara melindungi sistem komputer.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-icon">☁️</div>
+        <h3>Server & Cloud</h3>
+        <p>Mempelajari server, penyimpanan data, dan teknologi cloud computing.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SLOGAN -->
+<section class="slogan">
+  <div class="container reveal">
+    <p>SEMANGAT BELAJAR DAN BERPRESTASI</p>
+    <h2>SMK BISA SMK HEBAT</h2>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <h2>Galeri Kegiatan</h2>
+      <p>Belajar, praktik, dan berkembang bersama teknologi.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=85" alt="Kegiatan belajar">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=85" alt="Server komputer">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=85" alt="Praktik komputer">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85" alt="Diskusi kelompok">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="Belajar teknologi">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=85" alt="Komponen elektronik">
+    </div>
+
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="contact" id="kontak">
+  <div class="container contact-content">
+
+    <div class="contact-info reveal">
+      <h2>Kontak & Pendaftaran</h2>
+
+      <p>
+        Tertarik belajar teknologi dan bergabung dengan
+        jurusan TKJ SMK BANJAR ASRI?
+      </p>
+
+      <p><strong>Nama Sekolah:</strong><br>SMK BANJAR ASRI</p>
+
+      <p><strong>Jurusan:</strong><br>Teknik Komputer dan Jaringan (TKJ)</p>
+
+      <p><strong>Alamat:</strong><br>
+        SMK BANJAR ASRI CIMAUNG,<br>
+        Jl. Gn. Puntang No. KM. 1,<br>
+        Cimaung, Kec. Cimaung,<br>
+        Kabupaten Bandung, Jawa Barat 40374
+      </p>
+    </div>
+
+    <form id="formPendaftaran" class="reveal">
+      <h2>Form Pendaftaran</h2>
+
+      <input type="text" placeholder="Nama Lengkap" required>
+
+      <input type="text" placeholder="Asal Sekolah" required>
+
+      <input type="email" placeholder="Alamat Email" required>
+
+      <select required>
+        <option value="">Pilih Jurusan</option>
+        <option>Teknik Komputer dan Jaringan</option>
+      </select>
+
+      <textarea placeholder="Pesan atau pertanyaan"></textarea>
+
+      <button type="submit" class="btn">Kirim Pendaftaran</button>
+
+      <div id="message">
+        Terima kasih! Formulir berhasil divalidasi.
+        Silakan hubungi pihak sekolah untuk proses selanjutnya.
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <h3>SMK BANJAR ASRI</h3>
+    <p>Teknik Komputer dan Jaringan</p>
+    <p>SMK BISA SMK HEBAT</p>
+    <br>
+    <p>© <span id="year"></span> SMK BANJAR ASRI. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+
+// EFEK MENGETIK
+const text = "Teknik Komputer dan Jaringan";
+let index = 0;
+
+function typingEffect() {
+  if (index < text.length) {
+    document.getElementById("typing").textContent += text.charAt(index);
+    index++;
+    setTimeout(typingEffect, 75);
+  }
+}
+
+window.onload = typingEffect;
+
+
+// MENU MOBILE
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
+
+
+// TUTUP MENU SETELAH KLIK
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navMenu").classList.remove("show");
+  });
+});
+
+
+// ANIMASI SCROLL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+
+// ANIMASI ANGKA STATISTIK
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target;
+      const target = Number(counter.dataset.target);
+      const duration = 1500;
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(target * (1 - Math.pow(1 - progress, 3)));
+
+        counter.textContent = value;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+      counterObserver.unobserve(counter);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll(".counter").forEach(el => {
+  counterObserver.observe(el);
+});
+
+
+// FORM PENDAFTARAN
+document.getElementById("formPendaftaran").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (!this.reportValidity()) return;
+
+  document.getElementById("message").style.display = "block";
+  this.reset();
+});
+
+
+// TAHUN OTOMATIS
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
